@@ -3,9 +3,13 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/echarts/simple">Echarts</router-link>
+      <router-link to="/echarts/simple">Echarts simple</router-link> |
+      <router-link to="/echarts/data-zoom">Echarts dataZoom</router-link>
     </div>
-    <router-view/>
+
+    <div class="main-content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -29,5 +33,10 @@
       color: #42b983;
     }
   }
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
 }
 </style>

@@ -22,7 +22,12 @@ const routes = [
     path: '/echarts/simple',
     name: 'EchartsSimple',
     component: () => import('../views/echarts/simple.vue')
-  }
+  },
+  {
+    path: '/echarts/data-zoom',
+    name: 'EchartsDataZoom',
+    component: () => import('../views/echarts/dataZoom.vue')
+  },
 ]
 
 const router = new VueRouter({
