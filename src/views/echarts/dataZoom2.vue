@@ -8,6 +8,11 @@ import echarts from 'echarts';
 
 export default {
   name: 'EchartsSimple',
+  data() {
+    return {
+      myChart: null,
+    }
+  },
   computed: {
     tableData() {
       return this.getData();
@@ -18,11 +23,17 @@ export default {
     const myChart = echarts.init(document.getElementById('main'));
     // 绘制图表
     myChart.setOption(this.getOptions());
+    console.log(myChart);
+
+    myChart.on('click', function (params) {
+      // 控制台打印数据的名称
+      console.log(params.name);
+    });
   },
   methods: {
     getData() {
       const data = [];
-      for (let i = 1; i < 30; i++) {
+      for (let i = 1; i < 11; i++) {
         data.push([i, 0]);
       }
       return data;
@@ -63,6 +74,16 @@ export default {
           }
         ]
       }
+    },
+
+    registryEvents() {
+      this.myChart.on('click', function (params) {
+        console.log(params);
+      });
+
+      this.myChart.on('mouseover', { seriesIndex: 1, name: 'xx' }, function (params) {
+        console.log(params);
+      });
     }
   }
 }
