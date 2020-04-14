@@ -25,16 +25,13 @@ export default {
     myChart.setOption(this.getOptions());
     console.log(myChart);
 
-    myChart.on('click', function (params) {
-      // 控制台打印数据的名称
-      console.log(params.name);
-    });
+    this.registryEvents(myChart);
   },
   methods: {
     getData() {
       const data = [];
       for (let i = 1; i < 11; i++) {
-        data.push([i, 0]);
+        data.push([i, 0, 0]);
       }
       return data;
     },
@@ -42,7 +39,9 @@ export default {
       return {
         xAxis: {
           // show: false,
-          type: 'value'
+          type: 'value',
+          dataMin: 3,
+          interval: 1,
         },
         yAxis: {
           // show: false,
@@ -53,8 +52,11 @@ export default {
             // 这个dataZoom组件，默认控制x轴。
             type: 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
             // show: false,
-            start: 10, // 左边在 10% 的位置。
-            end: 60, // 右边在 60% 的位置。
+            startValue: 1, // 左边在 10% 的位置。
+            endValue: 5, // 右边在 60% 的位置。
+            // minSpan: 1,
+            // maxSpan: 10,
+            throttle: 100,
             // labelFormatter: function (value) {
             //   return parseInt(value)
             // },
@@ -63,7 +65,7 @@ export default {
         ],
         series: [
           {
-            type: 'scatter', // 这是个『散点图』
+            type: 'scatter',
             itemStyle: {
               opacity: 1
             },
@@ -76,12 +78,8 @@ export default {
       }
     },
 
-    registryEvents() {
-      this.myChart.on('click', function (params) {
-        console.log(params);
-      });
-
-      this.myChart.on('mouseover', { seriesIndex: 1, name: 'xx' }, function (params) {
+    registryEvents(myChart) {
+      myChart.on('datazoom', function (params) {
         console.log(params);
       });
     }
