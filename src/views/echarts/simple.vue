@@ -23,6 +23,10 @@ export default {
       yAxis: {},
       series: [{
         name: '销量',
+        type: 'line',
+        data: [5, 20, 36, 10, 10, 20]
+      }, {
+        name: '销量bar',
         type: 'bar',
         data: [5, 20, 36, 10, 10, 20]
       }]
