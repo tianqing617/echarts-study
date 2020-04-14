@@ -1,6 +1,6 @@
 <template>
    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-  <div id="main" style="width: 600px;height:50px;"></div>
+  <div id="main" style="width: 600px;height:400px;"></div>
 </template>
 
 <script>
@@ -21,10 +21,10 @@ export default {
         // show: false,
         type: 'value'
       },
-      grid: {
-        width: 500,
-        height: 10,
-      },
+      // grid: {
+      //   width: 500,
+      //   height: 300,
+      // },
       dataZoom: [
         {
           // 这个dataZoom组件，默认控制x轴。

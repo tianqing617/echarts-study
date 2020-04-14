@@ -28,6 +28,11 @@ const routes = [
     name: 'EchartsDataZoom',
     component: () => import('../views/echarts/dataZoom.vue')
   },
+  {
+    path: '/echarts/data-zoom2',
+    name: 'EchartsDataZoom2',
+    component: () => import('../views/echarts/dataZoom2.vue')
+  },
 ]
 
 const router = new VueRouter({

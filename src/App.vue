@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/echarts/simple">Echarts simple</router-link> |
-      <router-link to="/echarts/data-zoom">Echarts dataZoom</router-link>
+      <router-link to="/echarts/data-zoom">Echarts dataZoom</router-link> |
+      <router-link to="/echarts/data-zoom2">Echarts dataZoom2</router-link>
     </div>
 
     <div class="main-content">
